@@ -1,0 +1,16 @@
+services:
+  motioneye:
+    build: .
+    restart: always
+    network_mode: host
+    devices:
+      - /dev/video19:/dev/video0
+    volumes:
+      - motioneye_conf:/etc/motioneye
+      - motioneye_data:/var/lib/motioneye
+      - motioneye_logs:/var/log/motioneye
+
+volumes:
+  motioneye_conf:
+  motioneye_data:
+  motioneye_logs:

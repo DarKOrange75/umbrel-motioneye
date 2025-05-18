@@ -1,0 +1,28 @@
+type: app
+version: 1.0.0
+id: umbrel-motioneye
+update:
+  method: github
+  repo: DarKOrange75/umbrel-motioneye
+name: MotionEye
+description: MotionEye security camera app for Umbrel
+icon: https://raw.githubusercontent.com/ccrisan/motioneye/master/motioneye/static/motioneye.png
+maintainer: DarKOrange75
+services:
+  motioneye:
+    image: umbrel-motioneye-motioneye:latest
+    ports:
+      - 8765:8765
+    devices:
+      - /dev/video19:/dev/video0
+    restart: always
+    network_mode: host
+    volumes:
+      - motioneye_conf:/etc/motioneye
+      - motioneye_data:/var/lib/motioneye
+      - motioneye_logs:/var/log/motioneye
+
+volumes:
+  motioneye_conf:
+  motioneye_data:
+  motioneye_logs:
