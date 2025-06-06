@@ -1,0 +1,11 @@
+name: DarKOrange75 Custom Apps
+description: App Store personnalisé pour Umbrel avec MotionEye et caméra
+apps:
+  - id: motioneye
+    name: MotionEye
+    version: 0.1.0
+    repo: https://github.com/DarKOrange75/umbrel-motioneye
+  - id: camera
+    name: Caméra
+    version: 0.1.0
+    repo: https://github.com/DarKOrange75/umbrel-camera
